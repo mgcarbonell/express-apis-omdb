@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const axios = require('axios');
-const fs = require('fs');
 const app = express();
 const key = '9cf61e91'
 
@@ -40,8 +39,13 @@ axios.get('http://omdbapi.com', queryString)
         });
 });
 
-
-// app.get route for returning 1 value for returning 1 IMDb id movie/:id
+app.get('/movies/:movie_id', function (req, res) {
+  // have to search within omdbResponse.data.Search.imdbID
+  // find a way to look through an API maybe with axios and try to
+  // render all of the info on /details for a single movie.
+  // even take the results from the results page and be able to go
+  // to details by using the imdbID.
+})
 
 // The app.listen function returns a server handle
 var server = app.listen(process.env.PORT || 3000);
