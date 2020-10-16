@@ -1,2 +1,14 @@
+
 <% // Render individual movie details here %>
 <% // This is how to do comments in EJS, by the way... %>
+<h1><%= movie.Title %></h1>
+<img src="<%= movie.Poster %>" alt="">
+
+<h3>Plot</h3>
+<p><%= movie.Plot %></p>
+
+<h3>Cast</h3>
+<% let cast = movie.Actors.split(', ') %> 
+<% for( let i = 0; i < cast.length; i++ ) { %>
+  <p>- <%= cast[i] %></p>
+<% } %>

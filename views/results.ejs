@@ -4,7 +4,10 @@
 <% movies.forEach(movie => { %>
   <h2><%= movie.Title %></h2>
   <h3><%= movie.Year %></h3>
-  <img src = "<%= movie.Poster %>">
+ 
+  <form action="/movies/:movie_id" action="GET">
+      <button type="submit"><a href="/movies/<%= movie.imdbID %>">Details</a></button>
+  </form>
   <% }) %>
 <% } else { %>
   <h1>No Movie Found</h1>
