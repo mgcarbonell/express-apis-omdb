@@ -1,0 +1,9 @@
+
+<h1>My Faves</h1>
+<% for( let i = 0; i < faves.length; i++ ) { %>
+  <div class="movie">
+    <h3><%= faves[i].title %></h3>
+    <a href="/faves/<%= faves[i].imdbid %>">Read More</a>
+    <hr>
+  </div>
+<% } %>

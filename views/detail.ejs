@@ -4,6 +4,12 @@
 <h1><%= movie.Title %></h1>
 <img src="<%= movie.Poster %>" alt="">
 
+<form action="/faves" method="post">
+  <input type="hidden" name="title" value="<%= movie.Title %>" />
+  <input type="hidden" name="imdbid" value="<%= movie.imdbID %>" />
+  <input type="submit" value="Add to Fave" />
+</form>
+
 <h3>Plot</h3>
 <p><%= movie.Plot %></p>
 
